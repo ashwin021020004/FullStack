@@ -11,6 +11,11 @@ COPY . .
 # Build the application
 RUN mvn clean package -DskipTests
 
+# Expose port
 EXPOSE 8080
 
-CMD ["java", "-jar", "target/smart-rental-backend-1.0.0.jar"]
+# Set Java options for Railway
+ENV JAVA_OPTS="-Xmx512m -Xms256m"
+
+# Run the application
+CMD ["sh", "-c", "java $JAVA_OPTS -jar target/smart-rental-backend-1.0.0.jar"]
