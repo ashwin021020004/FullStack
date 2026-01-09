@@ -30,10 +30,10 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.addAllowedOrigin("http://localhost:5173");
         configuration.addAllowedOrigin("http://localhost:5174");
-        configuration.addAllowedOrigin("*");  // Allow all origins for production
+        configuration.addAllowedOrigin("https://full-stack-8qemhg0x0-ashwins-projects-3e6e9842.vercel.app");
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
-        // configuration.setAllowCredentials(true);  // Removed to allow * origins
+        configuration.setAllowCredentials(true);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
