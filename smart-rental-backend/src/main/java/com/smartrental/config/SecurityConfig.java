@@ -21,6 +21,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/", "/health").permitAll()
                 .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
                 .anyRequest().permitAll()
             );
@@ -35,7 +36,7 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(List.of(
             "http://localhost:5173",
             "http://localhost:5174",
-            "https://full-stack-fakxoj81h-ashwins-projects-3e6e9842.vercel.app"
+            "https://full-stack-8qemhg0x0-ashwins-projects-3e6e9842.vercel.app"
         ));
 
         configuration.setAllowedMethods(List.of(
