@@ -1,12 +1,13 @@
-FROM openjdk:17-jdk-slim
+# Use official OpenJDK replacement
+FROM eclipse-temurin:17-jdk-jammy
 
 WORKDIR /app
 
-# Copy Maven wrapper and pom.xml first for better caching
+# Copy Maven wrapper and pom.xml first (for Docker cache)
 COPY mvnw pom.xml ./
 COPY .mvn/ .mvn/
 
-# Download dependencies (this layer will be cached if pom.xml doesn't change)
+# Download dependencies
 RUN chmod +x mvnw && ./mvnw dependency:go-offline -B
 
 # Copy source code
@@ -15,7 +16,7 @@ COPY src ./src
 # Build the application
 RUN ./mvnw clean package -DskipTests
 
-# Expose port
+# Expose Spring Boot port
 EXPOSE 8080
 
 # Run the application
