@@ -1,0 +1,15 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+startCommand = "java -jar target/smart-rental-backend-1.0.0.jar"
+
+[build.env]
+JAVA_VERSION = "17"
+
+[deploy.env]
+JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
+PATH = "/usr/lib/jvm/java-17-openjdk-amd64/bin:$PATH"
