@@ -1,0 +1,19 @@
+# Java
+target/
+*.log
+
+# Node
+node_modules/
+dist/
+
+# Maven (CRITICAL)
+apache-maven-3.9.9/
+apache-maven-*/
+maven.zip
+
+# Env
+.env
+
+# IDE
+.vscode/
+.idea/

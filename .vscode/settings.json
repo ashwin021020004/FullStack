@@ -1,0 +1,27 @@
+{
+    "java.project.sourcePaths": ["smart-rental-backend/src/main/java"],
+    "java.project.outputPath": "smart-rental-backend/target/classes",
+    "java.project.referencedLibraries": [
+        "smart-rental-backend/lib/**/*.jar"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.import.gradle.enabled": false,
+    "java.import.maven.enabled": true,
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.saveActions.organizeImports": true,
+    "java.project.resourceFilters": [
+        "node_modules",
+        ".git",
+        "smart-rental-frontend/node_modules"
+    ],
+    "java.server.launchMode": "Standard",
+    "maven.terminal.useJavaHome": true,
+    "maven.terminal.customEnv": [
+        {
+            "environmentVariable": "JAVA_HOME",
+            "value": "C:\\Program Files\\Java\\jdk-17"
+        }
+    ],
+    "eslint.workingDirectories": ["smart-rental-frontend"],
+    "typescript.preferences.includePackageJsonAutoImports": "auto"
+}
